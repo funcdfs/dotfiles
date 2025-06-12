@@ -1,16 +1,22 @@
 
+https://www.chezmoi.io/user-guide/daily-operations/
+
 ## 日常命令
 
 ```
-
 alias cm="chezmoi"
 
 cm add 添加文件
 cm edit 编辑文件
     如果不是使用 chezmoi 进行的更新，那么就再一次 cm add 
 cm apply 应用 chezmoi 进行的更新
-cm pull 从仓库拉取新内容到 local 仓库，如果要进行应用，则再执行一次 cm apply 
+
+cm git pull 从仓库拉取新内容到 local 仓库，
+    cm diff 查看不同内容 (q) 退出预览
+    如果要进行应用到本地，则再执行一次 cm apply
 ```
+
+
 ## 自动提交的配置
 
 ```
