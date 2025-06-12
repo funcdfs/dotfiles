@@ -1,5 +1,9 @@
+
 [user]
 	name = funcdfs
 	email = funcdfs@gmail.com
+
 [core]
-	excludesfile = /Users/w/.gitignore_global
+    excludesfile = /Users/w/.gitignore_global
+
+
