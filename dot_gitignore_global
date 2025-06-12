@@ -1,0 +1,55 @@
+# macOS 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 编辑器和 IDE
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.env
+.venv/
+venv/
+
+# 编译文件
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+*.class
+
+# 临时文件
+*.log
+*.swp
+*.tmp
+*~
+
+# Git 自动合并产生的临时文件
+*.orig
+
+# 压缩包
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# OS/Linux 特有
+ehthumbs.db
+Icon?
+Thumbs.db
+Desktop.ini
