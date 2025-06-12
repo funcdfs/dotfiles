@@ -229,7 +229,7 @@ symbol = "r "
 symbol = "rb "
 
 [rust]
-symbol = "rs "
+symbol = "rust "
 
 [scala]
 symbol = "scala "
