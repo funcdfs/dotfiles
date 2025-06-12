@@ -32,6 +32,9 @@ ZSH_THEME="robbyrussell"
 
 
 
+
+
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -86,20 +89,18 @@ HIST_STAMPS="yyyy/mm/dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-##
+
+
+
+
+
+
+
+
+
+
+
+
 plugins=(
     git
     git-open
@@ -141,9 +142,8 @@ fi
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
+
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
 
 
 
@@ -193,10 +193,10 @@ alias hack="sudo xattr -dr com.apple.quarantine"
 
 alias cm="chezmoi"
 
-
 alias c="clear"
-alias t="clear && go test -v"
-alias g="go run gen.go"
+
+# alias t="clear && go test -v"
+# alias g="go run gen.go"
 
 export PATH="/usr/local/bin:$PATH"
 
