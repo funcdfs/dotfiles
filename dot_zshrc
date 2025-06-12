@@ -198,6 +198,10 @@ alias c="clear"
 # alias t="clear && go test -v"
 # alias g="go run gen.go"
 
+
+alias cc="~/.script/run.sh"
+
+
 export PATH="/usr/local/bin:$PATH"
 
 eval "$(starship init zsh)"
