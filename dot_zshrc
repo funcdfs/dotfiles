@@ -197,7 +197,8 @@ alias c="clear"
 
 # alias t="clear && go test -v"
 # alias g="go run gen.go"
-
+alias pycreatevenv="python3 -m venv ~/.venvs/myenv"
+alias pysourcevenv="source ~/.venvs/myenv/bin/activate"
 
 alias cc="~/.script/runcpp.sh"
 
