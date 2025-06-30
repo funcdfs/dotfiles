@@ -115,6 +115,8 @@ alias c="clear"
 alias cm="chezmoi"
 alias cme="chezmoi edit"
 alias cma="chezmoi apply"
+alias cmra="chezmoi re-add"
+alias cmp="chezmoi git pull"
 # C++
 alias nn="neovide --title-hidden --no-tabs"
 #alias cc="~/code/Algorithm/mac.sh"
