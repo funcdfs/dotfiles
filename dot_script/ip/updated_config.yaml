@@ -1,0 +1,155 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 0.0.0.0:9090
+unified-delay: true
+ipv6:
+  enable: true
+proxies:
+- name: '澳大利亚 - Australia, New South Wales, Sydney (Datacamp Limited) - 下载: 69.02
+    Mbps, 上传: 8.96 Mbps, 延迟: 286.48 ms'
+  type: trojan
+  server: 36.151.251.59
+  port: 11641
+  password: erPjhTcx
+  network: tcp
+  tls: true
+  skip-cert-verify: true
+  udp: true
+  resolved_ip: 212.81.47.91
+  region_info: Australia, New South Wales, Sydney (Datacamp Limited)
+  download_speed_mbps: 69.02
+  upload_speed_mbps: 8.96
+  latency_ms: 286.48
+- name: 'Trojan_Proxy_2_A - Australia, New South Wales, Sydney (Datacamp Limited)
+    - 下载: 67.17 Mbps, 上传: 4.61 Mbps, 延迟: 285.22 ms'
+  type: trojan
+  server: 36.151.251.59
+  port: 11641
+  password: erPjhTcx
+  network: tcp
+  tls: true
+  skip-cert-verify: true
+  udp: true
+  resolved_ip: 212.81.47.91
+  region_info: Australia, New South Wales, Sydney (Datacamp Limited)
+  download_speed_mbps: 67.17
+  upload_speed_mbps: 4.61
+  latency_ms: 285.22
+- name: 'Trojan_Proxy_1 - Singapore, South West, Singapore (DigitalOcean, LLC) - 下载:
+    80.15 Mbps, 上传: 3.54 Mbps, 延迟: 182.40 ms'
+  type: trojan
+  server: 36.151.251.59
+  port: 9378
+  password: oktJvyFw
+  network: tcp
+  tls: true
+  skip-cert-verify: true
+  udp: true
+  resolved_ip: 152.42.217.71
+  region_info: Singapore, South West, Singapore (DigitalOcean, LLC)
+  download_speed_mbps: 80.15
+  upload_speed_mbps: 3.54
+  latency_ms: 182.4
+- name: 'Trojan_Proxy_2_B - Singapore, South West, Singapore (DigitalOcean, LLC) -
+    下载: 83.69 Mbps, 上传: 6.32 Mbps, 延迟: 184.41 ms'
+  type: trojan
+  server: 36.151.251.60
+  port: 24441
+  password: oktJvyFw
+  network: tcp
+  tls: true
+  skip-cert-verify: true
+  udp: true
+  resolved_ip: 128.199.216.144
+  region_info: Singapore, South West, Singapore (DigitalOcean, LLC)
+  download_speed_mbps: 83.69
+  upload_speed_mbps: 6.32
+  latency_ms: 184.41
+- name: 'Trojan_Proxy_4 - Japan, Tokyo, Tokyo (Akamai Technologies, Inc.) - 下载: 82.64
+    Mbps, 上传: 6.75 Mbps, 延迟: 226.41 ms'
+  type: trojan
+  server: 36.151.251.36
+  port: 3072
+  password: oktJvyFw
+  network: tcp
+  tls: true
+  skip-cert-verify: true
+  udp: true
+  resolved_ip: 139.162.90.146
+  region_info: Japan, Tokyo, Tokyo (Akamai Technologies, Inc.)
+  download_speed_mbps: 82.64
+  upload_speed_mbps: 6.75
+  latency_ms: 226.41
+- name: '�🇺 Australia_Sydney_Trojan - Australia, New South Wales, Sydney (Datacamp
+    Limited) - 下载: 54.23 Mbps, 上传: 8.75 Mbps, 延迟: 283.32 ms'
+  type: trojan
+  server: 36.151.251.59
+  port: 11641
+  password: erPjhTcx
+  network: tcp
+  tls: true
+  skip-cert-verify: true
+  udp: true
+  resolved_ip: 212.81.47.91
+  region_info: Australia, New South Wales, Sydney (Datacamp Limited)
+  download_speed_mbps: 54.23
+  upload_speed_mbps: 8.75
+  latency_ms: 283.32
+- name: '🇬🇧 UK_Trojan - United Kingdom, England, Slough (DigitalOcean, LLC) - 下载:
+    12.60 Mbps, 上传: 14.53 Mbps, 延迟: 507.86 ms'
+  type: trojan
+  server: 36.151.251.61
+  port: 7027
+  password: diAaOVmJ
+  network: tcp
+  tls: true
+  skip-cert-verify: true
+  udp: true
+  resolved_ip: 165.22.123.187
+  region_info: United Kingdom, England, Slough (DigitalOcean, LLC)
+  download_speed_mbps: 12.6
+  upload_speed_mbps: 14.53
+  latency_ms: 507.86
+- name: '🇨🇦 Canada_Trojan - Canada, Ontario, Toronto (DigitalOcean, LLC) - 下载: 29.41
+    Mbps, 上传: 7.87 Mbps, 延迟: 458.63 ms'
+  type: trojan
+  server: 36.151.251.62
+  port: 41026
+  password: diAaOVmJ
+  network: tcp
+  tls: true
+  skip-cert-verify: true
+  udp: true
+  resolved_ip: 146.190.254.249
+  region_info: Canada, Ontario, Toronto (DigitalOcean, LLC)
+  download_speed_mbps: 29.41
+  upload_speed_mbps: 7.87
+  latency_ms: 458.63
+proxy-groups:
+- name: 🚀 Proxy
+  type: select
+  proxies:
+  - 澳大利亚
+  - Trojan_Proxy_2_A
+  - Trojan_Proxy_1
+  - Trojan_Proxy_2_B
+  - Trojan_Proxy_4
+  - 🇦🇺 Australia_Sydney_Trojan
+  - 🇬🇧 UK_Trojan
+  - 🇨🇦 Canada_Trojan
+- name: 🛑 Direct
+  type: select
+  proxies:
+  - DIRECT
+- name: 🌍 Global
+  type: select
+  proxies:
+  - 🚀 Proxy
+  - 🛑 Direct
+rules:
+- GEOSITE,CN,🛑 Direct
+- GEOIP,CN,🛑 Direct
+- MATCH,🌍 Global

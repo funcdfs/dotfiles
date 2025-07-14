@@ -1,0 +1,111 @@
+
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 0.0.0.0:9090
+unified-delay: true
+ipv6:
+  enable: true
+
+proxies:
+  - name: 澳大利亚
+    type: trojan
+    server: 36.151.251.59
+    port: 11641
+    password: erPjhTcx
+    network: tcp
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: Trojan_Proxy_2_A
+    type: trojan
+    server: 36.151.251.59
+    port: 11641
+    password: erPjhTcx
+    network: tcp
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: Trojan_Proxy_1
+    type: trojan
+    server: 36.151.251.59
+    port: 9378
+    password: oktJvyFw
+    network: tcp
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: Trojan_Proxy_2_B
+    type: trojan
+    server: 36.151.251.60
+    port: 24441
+    password: oktJvyFw
+    network: tcp
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: Trojan_Proxy_4
+    type: trojan
+    server: 36.151.251.36
+    port: 3072
+    password: oktJvyFw
+    network: tcp
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: 🇦🇺 Australia_Sydney_Trojan
+    type: trojan
+    server: 36.151.251.59
+    port: 11641
+    password: erPjhTcx
+    network: tcp
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: 🇬🇧 UK_Trojan
+    type: trojan
+    server: 36.151.251.61
+    port: 7027
+    password: diAaOVmJ
+    network: tcp
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: 🇨🇦 Canada_Trojan
+    type: trojan
+    server: 36.151.251.62
+    port: 41026
+    password: diAaOVmJ
+    network: tcp
+    tls: true
+    skip-cert-verify: true
+    udp: true
+
+proxy-groups:
+  - name: 🚀 Proxy
+    type: select
+    proxies:
+      - 澳大利亚
+      - Trojan_Proxy_2_A
+      - Trojan_Proxy_1
+      - Trojan_Proxy_2_B
+      - Trojan_Proxy_4
+      - 🇦🇺 Australia_Sydney_Trojan
+      - 🇬🇧 UK_Trojan
+      - 🇨🇦 Canada_Trojan
+  - name: 🛑 Direct
+    type: select
+    proxies:
+      - DIRECT
+  - name: 🌍 Global
+    type: select
+    proxies:
+      - 🚀 Proxy
+      - 🛑 Direct
+
+rules:
+  - GEOSITE,CN,🛑 Direct
+  - GEOIP,CN,🛑 Direct
+  - MATCH,🌍 Global
