@@ -33,7 +33,6 @@
                     },
                     {
                         "description": "在 mac 上使用 windows 键盘: Swap left_command with left_option",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -55,7 +54,6 @@
                     },
                     {
                         "description": "在 mac 上使用 windows 键盘: Swap right_command with right_option",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {

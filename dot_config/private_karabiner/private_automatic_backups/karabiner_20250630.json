@@ -33,7 +33,6 @@
                     },
                     {
                         "description": "在 mac 上使用 windows 键盘: Swap left_command with left_option",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -55,7 +54,6 @@
                     },
                     {
                         "description": "在 mac 上使用 windows 键盘: Swap right_command with right_option",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -231,56 +229,6 @@
                         "vendor_id": 1452
                     },
                     "ignore": true
-                }
-            ],
-            "fn_function_keys": [
-                {
-                    "from": { "key_code": "f1" },
-                    "to": [{ "consumer_key_code": "mute" }]
-                },
-                {
-                    "from": { "key_code": "f2" },
-                    "to": [{ "consumer_key_code": "volume_decrement" }]
-                },
-                {
-                    "from": { "key_code": "f3" },
-                    "to": [{ "consumer_key_code": "volume_increment" }]
-                },
-                {
-                    "from": { "key_code": "f4" },
-                    "to": [{ "consumer_key_code": "play_or_pause" }]
-                },
-                {
-                    "from": { "key_code": "f5" },
-                    "to": [{ "consumer_key_code": "scan_previous_track" }]
-                },
-                {
-                    "from": { "key_code": "f6" },
-                    "to": [{ "consumer_key_code": "scan_next_track" }]
-                },
-                {
-                    "from": { "key_code": "f7" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
-                },
-                {
-                    "from": { "key_code": "f8" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
-                },
-                {
-                    "from": { "key_code": "f9" },
-                    "to": [{ "key_code": "f9" }]
-                },
-                {
-                    "from": { "key_code": "f10" },
-                    "to": [{ "key_code": "f10" }]
-                },
-                {
-                    "from": { "key_code": "f11" },
-                    "to": [{ "key_code": "f11" }]
-                },
-                {
-                    "from": { "key_code": "f12" },
-                    "to": [{ "key_code": "f12" }]
                 }
             ],
             "name": "Cherry MX3.0S TKL",
