@@ -1,9 +1,25 @@
-
 [user]
 	name = funcdfs
 	email = funcdfs@gmail.com
 
 [core]
     excludesfile = /Users/w/.gitignore_global
+	quotepath = false
+    autocrlf = input 
 
+[color]
+    ui = auto
 
+[merge]
+    conflictstyle = diff3
+
+[push]
+    default = simple
+
+[alias]
+    st = status
+    cm = commit
+    co = checkout
+    br = branch
+    lg = log --oneline --graph --decorate --all
+    last = log -1 HEAD
