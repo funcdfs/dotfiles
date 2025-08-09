@@ -1,126 +1,13 @@
 {
+    "global": { "show_in_menu_bar": false },
     "profiles": [
         {
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "{Razer mouse} side buttons mapping (IINA = arrow keys, others = browser forward/back), only for Razer DeathAdder Essential",
+                        "description": "cherry MX3.0s 右下角 超键 1、2 快捷键增强：截图，粘贴",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.colliderli\\.iina$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 152,
-                                                "vendor_id": 5426
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "pointing_button": "button4" },
-                                "to": [{ "key_code": "left_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.colliderli\\.iina$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 152,
-                                                "vendor_id": 5426
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "pointing_button": "button5" },
-                                "to": [{ "key_code": "right_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.colliderli\\.iina$"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 152,
-                                                "vendor_id": 5426
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "pointing_button": "button4" },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.colliderli\\.iina$"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 152,
-                                                "vendor_id": 5426
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "pointing_button": "button5" },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "{cherry MX3.0s TKL} 右下角 超键 1、2 快捷键增强：截图，粘贴",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 431,
-                                                "vendor_id": 1130
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "1",
                                     "modifiers": {
@@ -137,17 +24,6 @@
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 431,
-                                                "vendor_id": 1130
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "2",
                                     "modifiers": {
@@ -166,7 +42,7 @@
                         ]
                     },
                     {
-                        "description": "[all] Chrome: Option + Left/Right Arrow to switch tabs",
+                        "description": "Chrome: Option + Left/Right Arrow to switch tabs",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -219,7 +95,7 @@
                         ]
                     },
                     {
-                        "description": "[all] 修改 Home End 为正常的跳转行首行尾",
+                        "description": "修改 Home End 为正常的跳转行首行尾",
                         "manipulators": [
                             {
                                 "description": "修改 Home 为正常的跳转行首 Command+Left Arrow",
@@ -246,7 +122,7 @@
                         ]
                     },
                     {
-                        "description": "[all] 删除一行的快捷方式 cmd+shift+k delete line",
+                        "description": "删除一行的快捷方式 cmd+shift+k delete line",
                         "manipulators": [
                             {
                                 "from": {
@@ -274,7 +150,7 @@
                         ]
                     },
                     {
-                        "description": "[all] 双击退出 left cmd + double-tap q → close application",
+                        "description": "双击退出 left cmd + double-tap q → close application",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -400,8 +276,7 @@
                         "product_id": 152,
                         "vendor_id": 5426
                     },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false
+                    "ignore": true
                 },
                 {
                     "identifiers": {
@@ -410,15 +285,6 @@
                         "vendor_id": 1452
                     },
                     "ignore": true
-                },
-                {
-                    "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 152,
-                        "vendor_id": 5426
-                    },
-                    "ignore": false,
-                    "mouse_flip_vertical_wheel": true
                 }
             ],
             "fn_function_keys": [
@@ -471,7 +337,7 @@
                     "to": [{ "key_code": "f12" }]
                 }
             ],
-            "name": "Cherry MX3.0S TKL + Razer Mouse",
+            "name": "Cherry MX3.0S TKL",
             "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
