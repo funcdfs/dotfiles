@@ -5,7 +5,6 @@
                 "rules": [
                     {
                         "description": "{Razer mouse} side buttons mapping (IINA = arrow keys, others = browser forward/back), only for Razer DeathAdder Essential (no repeat on hold, 100ms debounce)",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -462,6 +461,7 @@
                         "product_id": 152,
                         "vendor_id": 5426
                     },
+                    "ignore": false,
                     "mouse_flip_vertical_wheel": true
                 }
             ],

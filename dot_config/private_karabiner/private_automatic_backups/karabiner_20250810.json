@@ -4,8 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "{Razer mouse} side buttons mapping (IINA = arrow keys, others = browser forward/back), only for Razer DeathAdder Essential (no repeat on hold, 100ms debounce)",
-                        "enabled": false,
+                        "description": "{Razer mouse} side buttons mapping (IINA = arrow keys, others = browser forward/back), only for Razer DeathAdder Essential",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -26,17 +25,7 @@
                                     }
                                 ],
                                 "from": { "pointing_button": "button4" },
-                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 100 },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "repeat": false
-                                    }
-                                ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [],
-                                    "to_if_invoked": []
-                                },
+                                "to": [{ "key_code": "left_arrow" }],
                                 "type": "basic"
                             },
                             {
@@ -58,17 +47,7 @@
                                     }
                                 ],
                                 "from": { "pointing_button": "button5" },
-                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 100 },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "repeat": false
-                                    }
-                                ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [],
-                                    "to_if_invoked": []
-                                },
+                                "to": [{ "key_code": "right_arrow" }],
                                 "type": "basic"
                             },
                             {
@@ -90,18 +69,12 @@
                                     }
                                 ],
                                 "from": { "pointing_button": "button4" },
-                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 100 },
                                 "to": [
                                     {
                                         "key_code": "open_bracket",
-                                        "modifiers": ["command"],
-                                        "repeat": false
+                                        "modifiers": ["command"]
                                     }
                                 ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [],
-                                    "to_if_invoked": []
-                                },
                                 "type": "basic"
                             },
                             {
@@ -123,24 +96,18 @@
                                     }
                                 ],
                                 "from": { "pointing_button": "button5" },
-                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 100 },
                                 "to": [
                                     {
                                         "key_code": "close_bracket",
-                                        "modifiers": ["command"],
-                                        "repeat": false
+                                        "modifiers": ["command"]
                                     }
                                 ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [],
-                                    "to_if_invoked": []
-                                },
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "{cherry MX3.0s TKL} 右下角 超键 1、2 快捷键增强：截图，粘贴（no repeat on hold, 100ms debounce）",
+                        "description": "{cherry MX3.0s TKL} 右下角 超键 1、2 快捷键增强：截图，粘贴",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -161,18 +128,12 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 100 },
                                 "to": [
                                     {
                                         "key_code": "9",
-                                        "modifiers": ["control", "shift"],
-                                        "repeat": false
+                                        "modifiers": ["control", "shift"]
                                     }
                                 ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [],
-                                    "to_if_invoked": []
-                                },
                                 "type": "basic"
                             },
                             {
@@ -194,18 +155,12 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 100 },
                                 "to": [
                                     {
                                         "key_code": "v",
-                                        "modifiers": ["command"],
-                                        "repeat": false
+                                        "modifiers": ["command"]
                                     }
                                 ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [],
-                                    "to_if_invoked": []
-                                },
                                 "type": "basic"
                             }
                         ]
@@ -462,6 +417,7 @@
                         "product_id": 152,
                         "vendor_id": 5426
                     },
+                    "ignore": false,
                     "mouse_flip_vertical_wheel": true
                 }
             ],
