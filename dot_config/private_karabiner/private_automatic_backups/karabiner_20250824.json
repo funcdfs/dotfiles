@@ -1,5 +1,4 @@
 {
-    "global": { "show_additional_menu_items": true },
     "profiles": [
         {
             "complex_modifications": {
@@ -141,33 +140,6 @@
                         ]
                     },
                     {
-                        "description": "{cherry MX3.0s TKL} Control+Shift+Option+0 -> Open Mihomo Party.app",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 431,
-                                                "vendor_id": 1130
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "0",
-                                    "modifiers": {
-                                        "mandatory": ["left_control", "left_shift", "left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "open './Applications/Mihomo Party.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "{cherry MX3.0s TKL} 右下角 超键 1、2 快捷键增强：截图，粘贴（no repeat on hold, 100ms debounce）",
                         "manipulators": [
                             {
@@ -292,50 +264,6 @@
                         ]
                     },
                     {
-                        "description": "[all] F10 -> Open /Users/w/FFFFFFF/ in Finder",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f10",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "shell_command": "open '/Users/w/FFFFFFF/'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[all] F11 全屏 + F12 睡眠",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f12",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "power",
-                                        "modifiers": ["left_option", "left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f11",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f",
-                                        "modifiers": ["left_control", "left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "[all] 修改 Home End 为正常的跳转行首行尾",
                         "manipulators": [
                             {
@@ -386,43 +314,6 @@
                                         "repeat": false
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[all] Option + F4 -> Option + Command + Esc (Force Quit Applications)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f4",
-                                    "modifiers": {
-                                        "mandatory": ["option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape",
-                                        "modifiers": ["option", "command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[all] Ctrl + Shift + Esc -> Open Activity Monitor",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": {
-                                        "mandatory": ["control", "shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "open '/System/Applications/Utilities/Activity Monitor.app'" }],
                                 "type": "basic"
                             }
                         ]
@@ -546,8 +437,7 @@
                         "is_keyboard": true,
                         "product_id": 431,
                         "vendor_id": 1130
-                    },
-                    "ignore_vendor_events": true
+                    }
                 },
                 {
                     "identifiers": {
@@ -601,12 +491,16 @@
                     "to": [{ "consumer_key_code": "scan_next_track" }]
                 },
                 {
+                    "from": { "key_code": "f7" },
+                    "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
+                },
+                {
                     "from": { "key_code": "f8" },
-                    "to": [{ "consumer_key_code": "fast_forward" }]
+                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
                 },
                 {
                     "from": { "key_code": "f9" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
+                    "to": [{ "key_code": "f9" }]
                 },
                 {
                     "from": { "key_code": "f10" },
