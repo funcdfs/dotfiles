@@ -82,7 +82,7 @@ alias cd..="cd .."
 alias ..="cd .."
 alias home="cd ~"
 alias mkdir="mkdir -pv"
-alias treetime='tree -t --du -h --si | sed "s/[KM]B/0.00GB/g"'
+alias la='tree -ath --du --si --dirsfirst -L 5 -F -C"
 
 alias git="LANG=zh_CN git"
 alias github="git-open"
