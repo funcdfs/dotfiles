@@ -1,10 +1,11 @@
+" ==================================================================
+" Maintainer: funcdfs (funcdfs@gmail.com) 
+" Github:     github.com/funcdfs
+" ==================================================================
 
-" funcdfs@gmail.com
-" github.com/funcdfs
+" ============================ Key Mappings ============================
 
-" ============================ key map ============================
-
-
+" F-key mappings (commented out - uncomment if needed)
 " nnoremap <F1> :w !clip.exe<CR>
 " nnoremap <F2> :set nu! nu?<CR>
 " nnoremap <F3> :set list! list?<CR>
@@ -14,7 +15,7 @@
 " nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 " nnoremap <F7> :w !clip.exe<CR><CR>
 
-" kj for Esc
+" kj for Esc - Fast escape from insert mode
 let g:esc_k_lasttime = 0
 let g:esc_j_lasttime = 0
 function! KJescape(key)
@@ -27,146 +28,112 @@ inoremap <expr> k KJescape('k')
 inoremap <expr> j KJescape('j')
 inoremap <nowait> kj <ESC>
 
+" Timeout settings for key combinations
 set timeout
 set ttimeout
 set timeoutlen=500
 set ttimeoutlen=10
 
-" bracket jump 
+" Bracket jump - Tab to jump between matching brackets
 noremap <TAB> %
 
-" remap U to <C-r> for easier redo
+" Remap U to <C-r> for easier redo
 nnoremap U <C-r>
 
-" remove highlight
+" Remove highlight after search
 noremap <silent><leader>/ :nohls<CR>
 
-" Shift+H goto head of the line, Shift+L goto end of the line
+" H/L for line beginning/end navigation
 nnoremap H ^
 nnoremap L $
-" in Visual
 vnoremap H ^
 vnoremap L $
-" in waiting such as dL
 onoremap H ^
 onoremap L $
-" in select
 xnoremap H ^
 xnoremap L $
 
-
 " Map ; to : and save a million keystrokes
-" if in very fast typing, this will may make a lots of eroor touch
+" if in very fast typing, this will may make a lots of error touch
 " nnoremap ; :
 
-
-" leader key is '\' 
-" Quickly close the current window
+" Leader key shortcuts (leader key is '\')
 nnoremap <leader>q :q<CR>
-" Quickly save the current file
 nnoremap <leader>w :w<CR>
-" Quickly delete all content
 nnoremap <Leader>d ggdG
-" When normal Mode Quickly copy all content to system clipboard
 nnoremap <Leader>c ggVG"+y
-" When Visual Mode Quickly copy select content to system clipboard
 vnoremap <leader>c "+y
 
-
-
-" zen mode Keep search pattern at the center of the screen."
+" Zen mode - keep search pattern at center of screen
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
-
-"Reselect visual block after indent/outdent
+" Reselect visual block after indent/outdent
 vnoremap < <gv 
 vnoremap > >gv
 
-
-" y$ -> Y Make Y behave like other capitals
+" Make Y behave like other capitals (y$ -> Y)
 map Y y$
 
-
-" save
+" Save with sudo privileges
 cmap w!! w !sudo tee >/dev/null %
 
+" ============================ Base Settings ============================
 
-" ==================================  base ==================================
-
-
-" syntax
+" Syntax and file handling
 syntax on
-
-" history : how many lines of history VIM has to remember
 set history=2000
-
-" filetype
 filetype on
-" Enable filetype plugins
 filetype plugin on
 filetype indent on
 
-" base
-set nocompatible                " don't bother with vi compatibility
-set autoread                    " reload files when changed on disk, i.e. via `git checkout`
+" Basic behavior
+set nocompatible
+set autoread
 set shortmess=atI
-
-set magic                       " For regular expressions turn magic on
-set title                       " change the terminal's title
-set nobackup                    " do not keep a backup file
-
-set novisualbell                " turn off visual bell
-set noerrorbells                " don't beep
+set magic
+set title
+set nobackup
+set novisualbell
+set noerrorbells
 set tm=500
 
-
-" show location
-"   set cursorcolumn
+" Display and cursor
 set cursorline
-
-" movement
-set scrolloff=11                 " keep 8 lines when scrolling
-
-
-" show
-set ruler                       " show the current row and column
-set number                      " show line numbers
+set scrolloff=11
+set ruler
+set number
 set nowrap
-set showcmd                     " display incomplete commands
-set showmode                    " display current modes
-set showmatch                   " jump to matches when entering parentheses
-set matchtime=2                 " tenths of a second to show the matching parenthesis
+set showcmd
+set showmode
+set showmatch
+set matchtime=2
 
+" Search settings
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
-" search
-set hlsearch                    " highlight searches
-set incsearch                   " do incremental searching, search as you type
-set ignorecase                  " ignore case when searching
-set smartcase                   " no ignorecase if Uppercase char present
-
-
-" tab
-set expandtab                   " expand tabs to spaces
+" Tab and indentation
+set expandtab
 set smarttab
 set shiftround
-
-" indent
-set autoindent smartindent shiftround
+set autoindent
+set smartindent
 set shiftwidth=4
 set tabstop=4
-set softtabstop=4                " insert mode tab and backspace use 4 spaces
+set softtabstop=4
 
-" NOT SUPPORT
 " fold
 set foldenable
 set foldmethod=indent
 set foldlevel=99
 let g:FoldMethod = 0
-map <leader>zz :call ToggleFold()<cr>
+map <leader>z :call ToggleFold()<cr>
 fun! ToggleFold()
     if g:FoldMethod == 0
         exe "normal! zM"
@@ -177,7 +144,7 @@ fun! ToggleFold()
     endif
 endfun
 
-" encoding
+" Encoding settings
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
@@ -185,27 +152,17 @@ set ffs=unix,dos,mac
 set formatoptions+=m
 set formatoptions+=B
 
-
-" select & complete
+" Selection and completion
 set selection=inclusive
 set selectmode=mouse,key
-
 set completeopt=longest,menu
-set wildmenu                           " show a navigable menu for tab completion"
+set wildmenu
 set wildmode=longest,list,full
 set wildignore=*.o,*~,*.pyc,*.class
-
-
-" others
-set backspace=indent,eol,start  " make that backspace key work the way it should
+set backspace=indent,eol,start
 set whichwrap+=<,>,h,l
 
-" if this not work ,make sure .viminfo is writable for you
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
 
-" NOT SUPPORT
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
 
@@ -224,9 +181,8 @@ set background=dark
 let g:gruvbox_material_background = 'medium'
 let g:gruvbox_material_enable_italic = 1
 let g:gruvbox_material_better_performance = 1
-" update theme: cd ~/.vim/pack/colors/start/gruvbox-material git pull
+" update theme cmd: cd ~/.vim/pack/colors/start/gruvbox-material git pull
 colorscheme gruvbox-material
-
 
 " set mark column color
 hi! link SignColumn   LineNr
@@ -234,6 +190,45 @@ hi! link ShowMarksHLl DiffAdd
 hi! link ShowMarksHLu DiffChange
 
 " status line
-set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+" set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 set laststatus=2   " Always show the status line - use 2 lines for the status bar
+
+" ============================ Plugin Configuration ============================
+
+" delimitMate: Auto-completion for brackets/quotes
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+let g:delimitMate_balance_matchpairs = 1
+
+" lightline.vim: Lightweight status line
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox_material',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component': {
+      \   'filename': '%t'
+      \ },
+      \ }
+
+" ==================================================================
+" Key Bindings Summary
+" ==================================================================
+" Insert mode escape    -> kj or Esc  
+" Bracket navigation    -> Tab (jump between matching brackets)
+" Redo                  -> U
+" Clear search highlight-> <leader>/
+" Line navigation       -> H (beginning), L (end)
+" File operations       -> <leader>w (save), <leader>q (quit)
+" Content operations    -> <leader>d (delete all), <leader>c (copy)
+" Search navigation     -> n/N (with center positioning)
+" Visual indentation    -> </> (maintain selection)
+" Copy to line end      -> Y
+" Sudo save            -> :w!!
+" Toggle folding       -> <leader>z
+" ==================================================================
 
