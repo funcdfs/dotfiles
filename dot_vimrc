@@ -214,6 +214,20 @@ set mouse=a
 " theme
 set background=dark
 
+" 启用 true color
+if has("termguicolors")
+  set termguicolors
+endif
+
+" 使用 gruvbox-material
+set background=dark
+let g:gruvbox_material_background = 'medium'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_better_performance = 1
+" update theme: cd ~/.vim/pack/colors/start/gruvbox-material git pull
+colorscheme gruvbox-material
+
+
 " set mark column color
 hi! link SignColumn   LineNr
 hi! link ShowMarksHLl DiffAdd
