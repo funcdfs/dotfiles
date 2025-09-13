@@ -1,0 +1,47 @@
+" MacVim GUI 特定设置
+
+" 设置字体（推荐编程字体，如 Source Code Pro）
+set guifont=Source_Code_Pro:h14
+
+" 移除工具栏和滚动条
+set guioptions-=T  " 移除工具栏
+set guioptions-=r  " 移除右滚动条
+set guioptions-=L  " 移除左滚动条
+
+" 设置窗口大小
+set lines=50 columns=120
+
+" 启用 Mac 原生全屏
+set fuoptions=maxvert,maxhorz
+
+" 支持 Mac 剪贴板
+set clipboard=unnamed
+
+" 中文显示优化（确保无乱码）
+set encoding=utf-8
+set fileencoding=utf-8
+set guifontwide=STHeiti:h14  " 中文字体
+
+" 其他 GUI 设置...
+
+
+" MacVim Cmd 键映射
+if has("gui_macvim")
+  " Cmd + S 保存
+  macmenu &File.Save key=<D-s>
+  nnoremap <D-s> :w<CR>
+  inoremap <D-s> <Esc>:w<CR>a
+
+  " Cmd + Q 退出
+  nnoremap <D-q> :q<CR>
+
+  " Cmd + C 复制到系统剪贴板
+  vnoremap <D-c> "+y
+
+  " Cmd + V 粘贴
+  nnoremap <D-v> "+p
+  inoremap <D-v> <Esc>"+pa
+
+  " Cmd + / 注释代码（需插件如 nerdcommenter）
+  " todo
+endif
