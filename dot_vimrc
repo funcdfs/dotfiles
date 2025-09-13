@@ -195,10 +195,34 @@ set laststatus=2   " Always show the status line - use 2 lines for the status ba
 
 " ============================ Plugin Configuration ============================
 
-" delimitMate: Auto-completion for brackets/quotes
-let g:delimitMate_expand_cr = 1
-let g:delimitMate_expand_space = 1
-let g:delimitMate_balance_matchpairs = 1
+" delimitMate: VSCode-like smooth bracket completion
+" Core settings for minimal visual interference
+let g:delimitMate_expand_cr = 1                    " Expand on <CR>
+let g:delimitMate_expand_space = 1                 " Expand on <Space> 
+let g:delimitMate_balance_matchpairs = 1           " Balance brackets
+
+" Eliminate visual jumps - key settings
+let g:delimitMate_jump_expansion = 0               " Disable jump expansion to reduce flicker
+let g:delimitMate_smart_quotes = 0                 " Disable smart quotes (can cause jumps)
+let g:delimitMate_visual_leader = ""               " Remove visual leader
+
+" Performance settings for instant response
+let g:delimitMate_insert_timeout = 0               " No timeout delay
+let g:delimitMate_autoclose = 1                    " Auto-close brackets
+let g:delimitMate_tab2exit = 0                     " No tab to exit
+
+" Minimal matchpairs and quotes to reduce complexity
+let g:delimitMate_matchpairs = "(:),[:],{:}"       " Only basic brackets
+let g:delimitMate_quotes = "\" ' `"                " Basic quotes
+
+" Advanced settings to minimize cursor movement
+let g:delimitMate_excluded_regions = "Comment,String" " Exclude regions that cause jumps
+let g:delimitMate_excluded_ft = ""                  " No excluded filetypes
+let g:delimitMate_eol_marker = ""                   " No end-of-line marker
+
+" The smoothest possible experience
+let g:delimitMate_backspace = 1                    " Smart backspace
+" Note: left_delims and right_delims are handled automatically by delimitMate
 
 " lightline.vim: Lightweight status line
 let g:lightline = {
